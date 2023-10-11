@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'mineup.css'%}">
+    <script>
+        function delfunction(){
+            var c=document.getElementsByClassName('del')
+            Array.from(c).forEach((a) =>{ 
+            if (a.style.display=="table-cell"){
+            a.style.display = "none";
+      } else if (a) {
+        a.style.display = "table-cell";}})}
+    </script>
+</head>
+<body>
+    {%include 'navmenu.html'%}
+    
+    <div class="og" id="og">Organization:<p class="ro">{%for i in z%}{{i.org}}{%endfor%}</p></div>
+    <form method="post" class="input">
+        <p>To Add a Miner:</p>
+        {%csrf_token%}
+        <p class="nam">Name:
+        <input name="name" type="text" class="name"></p>
+        <p>Email:
+        <input name="email" type="email" class="email"></p>
+        <button type="submit" class="add">Submit</button>
+    </form>
+    <button type="submit" onclick="delfunction()" class="dell">To Delete</button>
+    {%for i in messages%}
+    {{i}}
+    {%endfor%}
+    <form method="post" class="tab">
+        {%csrf_token%}
+    <table>
+        <tr>
+            <th class="del">Select</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {%for i in a%}
+        <tr>
+            <td class="del"><input type="checkbox" name="delete" value="{{i.mail}}"></td>
+            <td>{{i.Name}}</td>
+            <td>{{i.mail}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    <button type="submit" class="del" id="delete">Delete</button>
+</form>
+    
+</body>
+</html>

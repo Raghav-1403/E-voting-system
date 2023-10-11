@@ -1,0 +1,56 @@
+<script>
+    function myfunction(){
+        var x = document.getElementById("myDIV");
+  if (x.style.display=="block") {
+    x.style.display = "none";
+  } else if (x) {
+    x.style.display = "block";}}
+</script>
+<script>
+    function myFunction() {
+      var y=document.getElementById("men");
+      var z=document.getElementById("og");
+      if (y.style.display=="none") {
+    y.style.display = "flex";
+    z.style.left="170px";
+  }    
+     else if(y){
+        y.style.display = "none";
+        z.style.left="60px";
+  }
+}
+
+ </script>
+</head>
+<body>
+<nav class="home">
+    <a href="http://localhost:8000/"class="ho">voters.com</a>
+    {%if user.is_authenticated%}
+    <button type="submit" class="func" onclick="myfunction()">{{user.username}}</button>
+    {%else%}
+    <a href="{%url 'login'%}" class="comp">Login</a>
+    {%endif%}
+</nav>
+<div id="myDIV" class="divv">
+  {%if request.build_absolute_uri is "http://localhost:8000/"%}
+    <a href="http://localhost:8000/logout/" class="out">logout</a>
+  {%else%}
+  <a href="{% url 'logout'%}" class="out">logout</a>
+  {%endif%}
+</div>
+<div class="container" onclick="myFunction()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+<nav class="menu" id="men">    
+<div class="container change" onclick="myFunction()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+<a class="hom" href="{%url 'create'%}">Home</a>
+<a class="cre" href="{%url 'start'%}">Create</a>
+<a class="mod" href="{%url 'main'%}">Participant</a>
+<a class="voter" href="{%url 'setup'%}">Voter setup</a>
+<a class="miner" href="{%url 'mineup'%}">Miner setup</a></nav>

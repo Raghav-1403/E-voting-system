@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+        <link rel="stylesheet" href="{%static 'login.css'%}">
+</head>
+<body>
+  <div class="flex-container">
+    <div class="content-container">
+      <div class="form-container">
+        <form method="post">
+          {%csrf_token%}
+          <div class="h11">
+          <h1>
+            LOGIN
+          </h1></div>
+          <span class="subtitle">USERNAME:</span>
+          <br>
+          <input type="text" name="username" value="">
+          <br>
+          <span class="subtitle">PASSWORD:</span>
+          <br>
+          <input type="password" name="pass" value="">
+          <br><br>
+          <div class="subb"><input type="submit" value="Login" class="submit-btn"></div>
+          <div class="mess">
+          <p >{%for i in messages%}
+          {{i}}
+          {%endfor%}</p></div>
+          <span class="sub">Not having an account?<a href="{%url 'register'%}">register</a></span>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

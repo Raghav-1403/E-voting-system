@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+        <link rel="stylesheet" href="{%static 'register.css'%}">
+</head>
+    <body>
+        <div class="flex-container">
+          <div class="content-container">
+            <div class="form-container">
+              <form method="post">
+                {%csrf_token%}
+                <div class="h11">
+                <h1>
+                  REGISTER
+                </h1></div>
+                <span class="subtitle">{{form.username.label}}</span>
+                <br>
+                {{form.username}}
+                <br>
+                <span class="subtitle">{{form.email.label}}</span>
+                <br>
+                {{form.email}}
+                <br>
+                <span class="subtitle">{{form.password1.label}}</span>
+                <br>
+                {{form.password1}}
+                <br>
+                <span class="subtitle">{{form.password2.label}}</span>
+                <br>
+                {{form.password2}}
+                <br>
+                
+                <br>
+                <div class="subb"><input type="submit" value="register" class="submit-btn"></div>
+                <div class="fault"><p>{%for i in messages%}
+                    {{i}}
+                    {%endfor%}</p></div>
+                
+                <span class="sub">Not having an account?<a href="{% url 'login'%}">login</a></span>
+              </form>
+            </div>
+          </div>
+        </div>
+      </body>
+</html>

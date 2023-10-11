@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+        <link rel="stylesheet" href="{%static 'many.css'%}">
+</head>
+<body><script>
+    function myfunction(){
+        var x = document.getElementById("myDIV");
+  if (x.style.display=="block") {
+    x.style.display = "none";
+  } else if (x) {
+    x.style.display = "block";
+  }
+}
+
+    </script>
+    <nav class="home">
+    <a href="http://localhost:8000/"class="ho">voters.com</a>
+    {%if user.is_authenticated%}
+    <button type="submit" class="func" onclick="myfunction()">{{user.username}}</button>
+    {%else%}
+    <a href="http://localhost:8000/login/" class="comp">Login</a>
+    
+    {%endif%}
+</nav>
+
+<div id="myDIV" class="divv">
+    <a href="http://localhost:8000/logout/" class="out">logout</a>
+</div>
+    <p class="welcome">Welcome!!!</p>
+    {%if b is not None%}
+    <a href="http://{{b}}.localhost:8000/create/" class="create">CREATOR</a>
+    {%else%}
+    <a class="create" href="create/">CREATOR</a>
+    {%endif%}
+    <a class="vote" href="voters/">VOTER</a>
+    {%if bb is not None%}
+    <a href="http://{{bb}}.localhost:8000/mining/" class="mine">MINER</a>
+    {%else%}
+    <a class="mine" href="mining/">MINER</a>
+    {%endif%}
+    <p class="query">FOR FURTHER QUERIES OR ISSUES CONTACT @ <a href="{%url 'home'%}">www.voters.com</a> or complaints@voters.com</p>   
+    
+</body>
+</html>

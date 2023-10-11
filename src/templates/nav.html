@@ -1,0 +1,23 @@
+<script>
+    function myfunction(){
+        var x = document.getElementById("myDIV");
+  if (x.style.display=="block") {
+    x.style.display = "none";
+  } else if (x) {
+    x.style.display = "block";}}
+</script>
+<nav class="home">
+    <a href="http://localhost:8000/"class="ho">voters.com</a>
+    {%if request.user.is_authenticated%}
+    <button type="submit" class="func" onclick="myfunction()">{{request.user.username}}</button>
+    {%else%}
+    <a href="{%url 'login'%}" class="comp">Login</a>
+    {%endif%}
+</nav>
+<div id="myDIV" class="divv">
+  {%if request.build_absolute_uri is "http://localhost:8000/"%}
+    <a href="http://localhost:8000/logout/" class="out">logout</a>
+  {%else%}
+  <a href="{% url 'logout'%}" class="out">logout</a>
+  {%endif%}
+</div>
