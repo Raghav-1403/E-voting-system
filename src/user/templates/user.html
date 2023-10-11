@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>voting.com</title>
+        {%load static%}
+        <link rel="stylesheet" href="{%static 'user.css'%}">
+        <script>
+            function myfunction(){
+                var x = document.getElementById("myDIV");
+          if (x.style.display=="block") {
+            x.style.display = "none";
+          } else if (x) {
+            x.style.display = "block";
+          }
+        }
+        </script>
+    </head>
+    <body><nav class="home">
+        <a href="http://localhost:8000/"class="ho">voters.com</a>
+        {%if user.is_authenticated%}
+        <button type="submit" class="func" onclick="myfunction()">{{user.username}}</button>
+        {%else%}
+        <a href="{%url 'login'%}" class="comp">Login</a>
+        
+        {%endif%}
+    </nav>
+    <div id="myDIV" class="divv">
+    <a href="{%url 'logout'%}" class="out">logout</a>
+    </div>
+        <form method="post" class="form">
+            {%csrf_token%}
+            <p class="top">YOU CAN VOTE HERE:</p>
+            {%for i in aa%}
+            <p class="vo"><input type="radio" name="vote" value="{{i.party}}" id="{{i.party_display}}">
+                <label for="{{i.party_display}}">{{i.party_display}}</label></p>
+                {%endfor%}
+                <button type="submit" class="submit" value="vote">VOTE</button>
+            <p class="results">{{after}} {{s}}</p>
+        </form>
+        <p class="query">FOR FURTHER QUERIES OR ISSUES CONTACT @ <a href="{http://localhost:8000/%}">www.voters.com</a> or complaints@voters.com</p>  
+    </body>
+</html>
