@@ -1,0 +1,20 @@
+@import url('demo.css');
+@import url('admin.css');
+@import url('table.css');
+body{
+  font-weight: 600;
+}
+ .voter{
+  text-decoration: underline;
+ }
+
+ .name{
+   margin-left: 26px;
+ }
+ .email{
+   margin-left: 26px;
+ }
+ .vot,.nam,.ema,.che{
+   padding: 2px 0px 2px 0px;
+   margin-bottom: 5px;
+ }

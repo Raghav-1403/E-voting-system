@@ -1,0 +1,35 @@
+@import url('demo.css');
+@import url('admin.css');
+@import url('table.css');
+body{
+  font-weight: 600;
+}
+ .mod{
+  text-decoration: underline;
+ }
+ .input{
+   top: 10px;
+   padding: 10px;
+   width: 350px;
+   border-radius: 10px;
+   
+ }
+ 
+ .name{
+   margin-left: 62px;
+ }
+ .display{
+   margin-left: 50px;
+ }
+ .sele{
+   margin-right: 70px;
+ }
+ .adds{
+   font-size: medium;
+   padding: 2px 10px 2px 10px;
+ }
+ 
+ .nam,.dis,.sel{
+  padding: 5px 0px 5px 0px;
+ }
+ 

@@ -1,0 +1,97 @@
+@import url('demo.css');
+@import url('admin.css');
+body{
+  font-weight: 600;
+}
+.hom{
+   text-decoration: underline;
+}
+.empty{
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   top: 50px;
+   margin-right: auto;
+   margin-left: auto;
+   color: #bdc1c6;
+   font-size: x-large;
+   outline: solid;
+   padding: 15px;
+   align-items: center;
+   border-radius: 10px;
+}
+.subb{
+   margin-top: 10px;
+   padding: 5px 10px 5px 10px;
+}
+#myChart{
+   position: relative;
+   top: 100px;
+   left: 220px;
+outline:white solid;}
+.est{
+   position: relative;
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   top: 50px;
+   color: #bdc1c6;
+   outline: solid;
+   border-radius: 10px;
+   padding: 5px;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   font-size: larger;
+}
+#myart{
+   position: relative;
+   left: 600px;
+   top: -300px;
+   outline:white solid;
+}
+#myrat{
+   position: relative;
+   top: -300px;
+   left: 220px;
+   min-height: 300px;
+   color: #bdc1c6;
+   outline:white solid;
+}
+.whatever{
+   top: 180px;
+   color: #bdc1c6;
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: large;
+}
+.empt{
+   
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   top: 200px;
+   margin-right: auto;
+   margin-left: auto;
+   color: #bdc1c6;
+   font-size: x-large;
+   outline: solid;
+   padding: 15px;
+   align-items: center;
+   border-radius: 10px;
+
+}
+.itle{
+   position: relative;
+   background-color: #333;
+   justify-content: center;
+   color: white;
+   display: flex;
+   width: 1080px;
+   top: 100px;
+   left: 220px;
+   font-size: x-large;
+   padding: 10px 0px 5px 0px;
+   outline:white solid;
+}

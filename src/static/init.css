@@ -1,0 +1,116 @@
+@import url('demo.css');
+@import url('admin.css');
+body{
+  font-weight: 600;
+}
+.cre{
+   text-decoration: underline;
+}
+  .organ{
+   color: #bdc1c6;
+   font-size: large;
+  }
+
+  .org-text{
+   background-color:#bdc1c6;
+  }
+  .pss{
+   display: flex;
+   align-items: center;
+   position: relative;
+   top: 50px;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   
+  }
+  .opp{
+   padding: 5px;
+   margin: 5px;
+  }
+  .avail{
+   padding: 10px;
+   color: #202124;
+   margin: 20px;
+   font-size: x-large;
+   display: flex;
+   flex-direction: column;
+   background-color: #92b9b9;
+   position:absolute;
+   outline: solid;
+   border-radius: 10px;
+   top: 200px;
+   left: 170px;
+   right: 10px;
+   
+  }
+  #addd{
+   display: none;
+   color: #bdc1c6;
+   font-size: large;
+   padding: 5px;
+   background-color: #92b9b9;
+   border-radius: 10px;
+   padding: 5px;
+}
+.or{
+   font-size: large;
+   color: #bdc1c6;
+}
+.dell{
+   display: none;
+   position:relative;
+}
+#sub{
+   
+   font-size: medium;
+   border-radius: 10px;
+   padding: 2px 4px 2px 4px;
+   margin: 0px 2px 0px 2px;
+
+
+}
+#chec{
+   margin: 0px 5px 0px 5px;
+}
+.submi{
+   font-size: medium;
+   border-radius: 10px;
+   padding: 2px 4px 2px 4px;
+   margin: 0px 2px 0px 2px;
+}
+.ad{
+   font-size: large;
+   padding: 5px 20px 5px 20px;
+   background-color: #333;
+   color: #bdc1c6;
+   border-radius: 10px;
+   margin-right: 10px;
+   border-color: #bdc1c6;
+   
+}
+.ads{
+   font-size: large;
+   padding: 5px 10px 5px 10px;
+   background-color: #333;
+   color: #bdc1c6;
+   border-radius: 10px;
+   margin-left: 10px;
+   border-color: #bdc1c6;
+}
+.clum{
+   padding: 5px;
+   display: flex;
+   border-radius: 10px;
+   color: black;
+
+}
+.sum{
+   border-radius: 10px;
+   padding: 2px 0px 2px 0px;
+   margin: 0px 5px 0px -2px;
+}
+.clum:nth-child(even){
+   background-color: #bdc1c6;
+   
+}

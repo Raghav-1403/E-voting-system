@@ -1,0 +1,10 @@
+@import url('demo.css');
+ .hash{
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+ }

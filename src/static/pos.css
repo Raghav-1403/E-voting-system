@@ -1,0 +1,22 @@
+@import url('demo.css');
+body{
+   font-weight: 600;
+ }
+ .select{
+    position: fixed;
+    top: 25%;
+    color: #bdc1c6;
+    font-size: xx-large;
+    left: 38%;
+ }
+ .submit{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+ }
+ .sub{
+    padding: 5px 10px 5px 10px;
+ }
+#par{
+    min-width: 100px;
+}

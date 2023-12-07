@@ -1,0 +1,18 @@
+@import url('demo.css');
+@import url('admin.css');
+@import url('table.css');
+body{
+  font-weight: 600;
+}
+ .miner{
+   text-decoration: underline;
+ }
+ 
+.name{
+   margin: 5px 10px 5px 9px; 
+}
+.email{
+   margin: 5px 8px 10px 8px;
+}
+
+ 
