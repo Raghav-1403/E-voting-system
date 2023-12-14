@@ -1,4 +1,4 @@
 # E-voting system
 Installation
- pip install django django-tenants
+ #pip install django django-tenants
  
