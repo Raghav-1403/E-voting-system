@@ -28,6 +28,8 @@ Now you have to apply these commands in the terminal
 ```
 ```http
   py manage.py makemigrations
+```
+```http
   py manage.py migrate
 ```
 To run
