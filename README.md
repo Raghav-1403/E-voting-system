@@ -24,6 +24,7 @@ In postgresql create user and mention in the src/exp/settings.py file
 Now you have to apply these commands in the terminal
 
 ```bash
+  cd exp
   cd src
 ```
 ```bash
@@ -36,6 +37,8 @@ To run
 ```bash
   python manage.py runserver
 ```
+Now you can access your website in localhost or 127.0.0.1 with a host mentioned in the terminal
+![Screenshot (47)](https://github.com/Raghav-1403/E-voting-system/assets/116968337/5ad59bde-bb6d-476a-8ae0-e0670cef8d13)
 
 
 
