@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'setup.css'%}">
+    <script>
+        function delfunction(){
+            var c=document.getElementsByClassName('del')
+            Array.from(c).forEach((a) =>{ 
+            if (a.style.display=="table-cell"){
+            a.style.display = "none";
+      } else if (a) {
+        a.style.display = "table-cell";}})}
+    </script>
+</head>
+<body>
+    {%include 'navmenu.html'%}
+    <div class="og" id="og">Organization:<p class="ro">{{org}}</p></div>
+    <form method="post" class="input">
+        {%csrf_token%}
+        <p class="vot">To Add a voter:</p>
+        <p class="nam">Name:
+        <input name="name" type="text" class="name"></p>
+        <p class="ema">Email:
+        <input name="email" type="email" class="email"></p>
+        {%for i in positions%}
+        <p class="che">
+            <input type="checkbox" name="check" value="{{i.participant}}" id="{{i.participant}}">
+            <label for="{{i.participant}}">{{i.participant}}</label>
+        </p>
+        {%endfor%}
+        <button type="submit" class="add">Add</button>
+    
+    </form>
+
+    <button type="submit" onclick="delfunction()" class="dell">To Delete</button>
+    <form method="post" class="tab">
+        {%csrf_token%}
+        
+    <table>
+        <tr>
+            <th class="del">Select</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Position</th>
+            <th>voted</th>
+        </tr>
+        {%for i in voters_db%}
+        <tr>
+            <td class="del" id="checki"><input type="checkbox" name="delete" value="{{i.mail}}"></td>
+            <td>{{i.Name}}</td>
+            <td>{{i.mail}}</td>
+            <td>{%for a in i.pos%}
+                <p>{{a}}</p>
+                {%endfor%}
+            </td>
+            <td>{%for a in i.votepos%}
+                <p>{{a}}</p>
+                {%endfor%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    <button type="submit" class="del" id="delete">Delete</button>
+</form>
+    
+</body>
+</html>

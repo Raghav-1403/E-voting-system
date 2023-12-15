@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    {%load static%}
+        <link rel="stylesheet" href="{%static 'home.css'%}">
+        
+</head>
+    {%include 'navmenu.html'%}
+    {%if org is None%}
+    <form method="post" class="empty">
+        {%csrf_token%}
+        <p class="organ">Organization:
+        <input type="text" name="org" class="org-text"></p>
+        <button type="submit" class="subb">submit</button>
+    </form>
+    {%else%}
+    <div class="og" id="og">Organization:<p class="ro">{{org}}</p></div>
+    
+    {%for i in messages%}
+    {{i}}
+    {%endfor%}
+    <form method="post" class="empty">
+        {%csrf_token%}
+        <p class="sel"><label for="parti" class="organ">Choose a position:</label>
+            <select name="parti" id="pos" class="org-text">
+                {%for i in positions%}
+                <option value="{{i.participant}}">{{i.participant}}</option>
+                {%endfor%}
+            </select></p>
+    <button type="submit" class="subb">submit</button>
+</form>
+<div class="itle">{{first_pos}}</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div
+id="myChart" style="width:100%; width:400px; min-height:400px;">
+</div>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+const data = google.visualization.arrayToDataTable({{par_count|safe}});
+
+const options = {
+  
+  backgroundColor: "#333",
+  legendTextStyle: { color: 'white' },
+  legend: {
+  position: 'bottom'
+}};
+
+const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+}
+</script>
+    
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div id="myart" style="width:100%;width:700px; min-height: 400px;"></div>
+
+<script>
+const xArray = {{party_1|safe}};
+const yArray = {{count_1}};
+
+const data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar",
+  marker: {
+  color: 'firebrick'
+  }
+}];
+
+const layout = {
+      plot_bgcolor:"#333",
+      paper_bgcolor:"#333",
+      font: {
+          color: 'white'
+      }
+};
+
+Plotly.newPlot("myart", data, layout, {displayModeBar: false});
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="myrat" style="width:100%; width:1080px;height:500px;"></div>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+const data = google.visualization.arrayToDataTable({{par_count2|safe}});  
+
+const options = {isStacked: true,
+  backgroundColor: "#333",
+  titleTextStyle: { color: 'white' },
+  legendTextStyle: { color: 'white' },
+  legend: {
+  position: 'bottom'
+},hAxis: {
+  viewWindow: {
+        min: 0,
+        max: 100
+    },
+    ticks: [0, 25, 50, 75, 100],
+    textStyle:{color: 'white'}
+},vAxis: {
+    textStyle:{color: 'white'}
+}
+
+};
+
+const chart = new google.visualization.BarChart(document.getElementById('myrat'));
+  chart.draw(data, options);
+}
+</script>
+
+
+{%endif%} 
+</body>
+</html>

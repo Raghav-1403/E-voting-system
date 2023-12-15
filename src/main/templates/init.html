@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+        <link rel="stylesheet" href="{%static 'init.css'%}">
+      <script> 
+        function addfunc(){
+            var z=document.getElementById("addd");
+            var c=document.getElementsByClassName("dell");
+            if (z.style.display=="flex"){
+            z.style.display = "none";} 
+        else if (z) {
+        z.style.display = "flex";
+        Array.from(c).forEach((a) =>{
+        a.style.display = "none";})}}
+        function delfunc(){
+            var z=document.getElementById("addd");
+            var c=document.getElementsByClassName("dell");
+            Array.from(c).forEach((a) =>{ 
+            if (a.style.display=="block"){
+            a.style.display = "none";
+      } else if (a) {
+        a.style.display = "block";
+        z.style.display = "none";}})}
+     </script>
+</head>
+<body>
+  {%include 'navmenu.html'%}
+    
+    <div class="og" id="og">Organization:<p class="ro">{{org}}</p></div>
+    {%for i in messages%}
+    {{i}}
+    {%endfor%}
+    
+    <div class="pss">
+      <button type="submit" onclick="addfunc()" class="ad">To Add</button>
+      <p class="or">or</p>
+      <button type="submit" onclick="delfunc()" class="ads">To Delete</button>
+      </div>
+
+    <div class="avail" id="vail">
+       <p class="ztest"> The Positions:</p>
+        <div class="opp">
+          <form method="post">
+            {%csrf_token%}
+            {%for i in positions%}
+            <p class="clum"><input type="checkbox" name="del" value="{{i.participant}}" class="dell" id="chec">{{i.participant}}</p>
+            {%endfor%}
+            <p><button type="submit" class="dell" id="sub">Delete</button></p>
+          </form>
+            <form method="post" id="addd">
+                {%csrf_token%}
+                <p><input type="text" name="place" class="sum"></p>
+                <button type="submit" class="submi">ADD</button>
+            </form> 
+        </div>
+    </div>
+    
+
+    
+    
+</body>
+</html>

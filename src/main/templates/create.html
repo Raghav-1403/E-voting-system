@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'create.css'%}">
+    <script>
+        function delfunction(){
+            var c=document.getElementsByClassName('del')
+            Array.from(c).forEach((a) =>{ 
+            if (a.style.display=="table-cell"){
+            a.style.display = "none";
+      } else if (a) {
+        a.style.display = "table-cell";}})}
+    </script>
+</head>
+<body>
+    {%include 'navmenu.html'%}
+    
+    <div class="og" id="og">Organization:<p class="ro">{{org}}</p></div>
+
+    <form method="post" class="input">
+        <p>TO ADD:</p>
+        {%csrf_token%}
+        <p class="nam">voter name: 
+        <input name="names" type="text" class="name"></p>
+        <p class="dis">voter display:
+        <input name="display" type="text" class="display"></p>
+        <p class="sel"><label for="parti" class="sele">Choose a position:</label>
+        <select name="parti" id="pos" class="select">
+            {%for i in positions%}
+            <option value="{{i.participant}}">{{i.participant}}</option>
+            {%endfor%}
+        </select></p>
+        <p><button type="submit" class="adds">Add</button></p>
+    </form>
+    
+    <button type="submit" onclick="delfunction()" class="dell">To Delete</button>
+    <form method="post"class="tab">
+        {%csrf_token%}
+        <table >
+            <tr>
+                <th class="del">Select</th>
+                <th>Party Name</th>
+                <th>Party display</th>
+                <th>Party Position</th>
+            </tr>
+        {%for i in party_mem%}
+        <tr>
+            <td class="del"><input type="checkbox" name="delete" value="{{i.party}}" id="{{i.party_display}}"></td>
+            <td>{{i.party}}</td>
+            <td>{{i.party_display}}</td>
+            <td>{{i.party_pos.participant}}</td></p>
+        </tr>
+        {%endfor%}
+        </table>
+            <p><button type="submit" class="del" id="delete">Delete</button></p>
+    </form>
+    {{error}}
+    {{suc}}
+</body>
+</html>
