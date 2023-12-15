@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voting.com</title>
+    
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'pos.css'%}">
+</head>
+<body>
+    
+    {%include 'nav.html'%}
+    <form method="post" class="select">
+        {%csrf_token%}
+       
+        <label for="vote">Choose a position:</label>
+        <select name="vote" id="par">
+            <option value="rog">------</option>
+            {%if types == 'voter'%}
+            {%for j in parties%}
+            <option value="{{j}}">{{j}}</option>
+            {%endfor%}
+            {%elif types == 'creator'%}
+            {%for j in parties%}
+            <option value="{{j.participant}}">{{j.participant}}</option>
+            {%endfor%}
+            {%endif%}
+        </select>
+        <p>
+        <div class="submit">
+        <input type="submit" class="sub"></div></p>
+    </form>
+</body>
+</html>
