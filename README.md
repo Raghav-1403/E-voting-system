@@ -3,13 +3,21 @@ This project is about e-voting system using django and a centralized blockchain 
 
 Installations and requirments
 
+The Python and pip should be installed
+
+The Django and Django-tenants can be installed using the command
+
 ```http
   pip install django django-tenants
 ```
 
+For database the postgresql
+  To install the database
+
 ```http
   https://www.postgresql.org/download/
 ```
+
 
 
 The project home page
