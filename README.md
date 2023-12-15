@@ -11,3 +11,15 @@ Creator-Used to create the voters list under a organization name. The voters and
 Voters-Used to vote to a person or a party under the name of organization. The user has restricted acess. The hash value will be generated against the vote.
 
 Miner-The miner works differently here the miner uses to find out the name of the candidate from the hash value, Which is similar to password cracking in hash. The miner will run with every party or member and find out the exact party from the hash.
+
+Creator Page(demo):
+
+
+Voter Page(demo):
+
+
+Miner Page(demo):
+
+
+
+
