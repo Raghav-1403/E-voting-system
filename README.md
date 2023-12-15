@@ -21,6 +21,20 @@ For database the postgresql
 In postgresql create user and mention in the src/exp/settings.py file
 ![image](https://github.com/Raghav-1403/E-voting-system/assets/116968337/5bb0455c-b07d-4b0d-81fb-ba00654827ae)
 
+Now you have to apply these commands in the terminal
+
+```http
+  cd src
+```
+```http
+  py manage.py makemigrations
+  py manage.py migrate
+```
+To run
+```http
+  py manage.py runserver
+```
+
 
 
 
