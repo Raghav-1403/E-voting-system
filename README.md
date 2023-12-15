@@ -18,6 +18,9 @@ For database the postgresql
   https://www.postgresql.org/download/
 ```
 
+In postgresql create user and mention in the src/exp/settings.py file
+
+
 
 
 The project home page
