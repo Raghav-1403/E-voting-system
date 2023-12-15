@@ -27,14 +27,14 @@ Now you have to apply these commands in the terminal
   cd src
 ```
 ```bash
-  py manage.py makemigrations
+  python manage.py makemigrations
 ```
 ```bash
-  py manage.py migrate
+  python manage.py migrate
 ```
 To run
 ```bash
-  py manage.py runserver
+  python manage.py runserver
 ```
 
 
