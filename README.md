@@ -7,6 +7,10 @@ Installations and requirments
   pip install django django-tenants
 ```
 
+```http
+   https://www.postgresql.org/download/
+```
+
 
 The project home page
 ![Screenshot 2023-12-16 002239](https://github.com/Raghav-1403/E-voting-system/assets/116968337/ed17d3e0-369f-4532-9f2c-48d6175b0ae0)
