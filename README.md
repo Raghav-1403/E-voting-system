@@ -7,7 +7,7 @@ The Python and pip should be installed
 
 The Django and Django-tenants can be installed using the command
 
-```http
+```bash
   pip install django django-tenants
 ```
 
@@ -23,17 +23,17 @@ In postgresql create user and mention in the src/exp/settings.py file
 
 Now you have to apply these commands in the terminal
 
-```http
+```bash
   cd src
 ```
-```http
+```bash
   py manage.py makemigrations
 ```
-```http
+```bash
   py manage.py migrate
 ```
 To run
-```http
+```bash
   py manage.py runserver
 ```
 
