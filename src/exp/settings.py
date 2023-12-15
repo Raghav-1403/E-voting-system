@@ -93,9 +93,9 @@ WSGI_APPLICATION = 'exp.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django_tenants.postgresql_backend',
-        'NAME': 'post_table',
-        'USER': 'admin',
-        'PASSWORD': '1234',
+        'NAME': 'Name of the database',
+        'USER': 'Your username',
+        'PASSWORD': 'Your password',
     }
 }
 DATABASE_ROUTERS = (
